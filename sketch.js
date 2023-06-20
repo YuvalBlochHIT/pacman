@@ -27,13 +27,13 @@ let backgroundMusic;
  * Preloads the images and font used in the sketch.
  */
 function preload() {
+  backgroundMusic = loadSound('BackgroundMusic.mp3');
   candyLandImg = loadImage('CandyLand.jpg');
   pacmanImg = loadImage('PacMan.png');
   candyImg = loadImage('Candy.png');
   teethImg = loadImage('Teeth.png');
   logo = loadImage('logo.png');
   customFont = loadFont('Pexel Grotesk.otf');
-  backgroundMusic = loadSound('BackgroundMusic.mp3');
 }
 
 /**
@@ -46,7 +46,7 @@ function setup() {
   calculateScorePosition();
   textFont(customFont);
   setInterval(addCandy, 650); // Add candy every 2 seconds
-  backgroundMusic.loop();
+//backgroundMusic.loop();
 }
 
 /**
@@ -262,8 +262,8 @@ function mouseClicked() {
     gameStarted = true;
     teethVisible = false;
   } else if (
-    mouseX >= imgX + imgWidth - 70 &&
-    mouseX <= imgX + imgWidth - 20 &&
+    mouseX >= imgX + imgWidth - 100 &&
+    mouseX <= imgX + imgWidth - 50 &&
     mouseY >= imgY &&
     mouseY <= imgY + 40
   ) {
